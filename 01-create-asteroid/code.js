@@ -1,0 +1,19 @@
+// Initialize the Kontra.js framework
+kontra.init();
+
+// Create a single asteroid sprite and render it
+let asteroid = kontra.Sprite({
+  type: "asteroid",
+  x: 100,
+  y: 100,
+  dx: Math.random() * 4 - 2,
+  dy: Math.random() * 4 - 2,
+  radius: 30,
+  render() {
+    this.context.strokeStyle = "white";
+    this.context.beginPath();
+    this.context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    this.context.stroke();
+  },
+});
+asteroid.render();
